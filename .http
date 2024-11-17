@@ -1,0 +1,43 @@
+@PORT = 3000;
+@host = http://localhost:3000
+
+### GET "/"
+GET {{host}}/
+
+### GET "/employees"
+GET {{host}}/employees
+
+### POST "/employees"
+POST {{host}}/employees
+Content-Type: application/json
+
+{
+  "name": "Jimmy Dean"
+}
+
+### POST "/employees"
+POST {{host}}/employees
+Content-Type: application/json
+
+{
+  "name": "Fred"
+}
+
+### PUT "/employees/:id"
+PUT {{host}}/employees/12
+Content-Type: application/json
+
+{
+  "name": "Billy Jean"
+}
+
+### PUT "/employees/:id" (Error expected)
+PUT {{host}}/employees/15
+Content-Type: application/json
+
+{
+  "name": "wrongly-anne"
+}
+
+### DELETE "/employees/:id"
+DELETE {{host}}/employees/13
